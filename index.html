@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Saptarshi Bhowmick's Digital Marketing Portfolio featuring SEO, Google Ads, Meta Ads and digital marketing projects.">
+        content="Saptarshi Bhowmick's Digital Marketing Portfolio featuring SEO, Google Ads, Meta Ads, keyword research and practical digital marketing projects.">
 
     <title>Saptarshi Bhowmick | Digital Marketing Portfolio</title>
 
     <style>
+
+        /* BASIC SETTINGS */
+
         * {
             margin: 0;
             padding: 0;
@@ -23,9 +25,9 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #0b1120;
-            color: #e5e7eb;
+            color: #e2e8f0;
             line-height: 1.7;
         }
 
@@ -39,11 +41,15 @@
             margin: auto;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
 
         nav {
-            padding: 22px 0;
+            background: #0b1120;
             border-bottom: 1px solid #263248;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .nav-content {
@@ -51,46 +57,56 @@
             justify-content: space-between;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         .logo {
             color: #ffffff;
-            font-size: 21px;
+            font-size: 20px;
             font-weight: bold;
         }
 
-        nav a {
-            color: #cbd5e1;
-            margin-left: 18px;
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        nav a:hover {
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
             color: #38bdf8;
         }
 
-        /* Hero Section */
+        /* HERO SECTION */
 
         .hero {
-            padding: 100px 0 85px;
+            padding: 100px 0 90px;
             text-align: center;
+            background: linear-gradient(
+                135deg,
+                #0b1120,
+                #14243d
+            );
         }
 
-        .tag {
+        .badge {
             display: inline-block;
-            padding: 6px 15px;
-            border: 1px solid #334155;
-            border-radius: 30px;
             color: #38bdf8;
-            margin-bottom: 20px;
+            border: 1px solid #334155;
+            padding: 7px 16px;
+            border-radius: 30px;
             font-size: 14px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
             font-size: 46px;
             line-height: 1.2;
             color: #ffffff;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -98,17 +114,20 @@
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto 25px;
             color: #cbd5e1;
             font-size: 17px;
         }
 
+        /* BUTTONS */
+
         .button {
             display: inline-block;
-            padding: 11px 20px;
-            margin: 6px;
+            padding: 11px 19px;
+            margin: 6px 4px;
             border-radius: 7px;
+            font-size: 14px;
             font-weight: bold;
             transition: 0.3s;
         }
@@ -123,24 +142,24 @@
         }
 
         .secondary {
-            border: 1px solid #475569;
             color: #ffffff;
+            border: 1px solid #475569;
         }
 
         .secondary:hover {
             background: #1e293b;
         }
 
-        /* Common Sections */
+        /* COMMON SECTIONS */
 
         section {
-            padding: 65px 0;
+            padding: 70px 0;
         }
 
         .section-title {
-            font-size: 31px;
             color: #ffffff;
-            margin-bottom: 12px;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .section-description {
@@ -148,32 +167,33 @@
             margin-bottom: 30px;
         }
 
-        /* About */
+        /* ABOUT */
 
         .about-box {
             background: #111b2e;
-            padding: 30px;
             border: 1px solid #263248;
             border-radius: 12px;
+            padding: 30px;
         }
 
         .about-box p {
             color: #cbd5e1;
+            margin-bottom: 12px;
         }
 
-        /* Skills */
+        /* SKILLS */
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .skill-card {
             background: #111b2e;
             border: 1px solid #263248;
-            border-radius: 10px;
-            padding: 22px;
+            padding: 24px;
+            border-radius: 12px;
         }
 
         .skill-card h3 {
@@ -183,22 +203,25 @@
 
         .skill-card p {
             color: #cbd5e1;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* Projects */
+        /* PROJECTS */
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+            gap: 24px;
         }
 
         .project-card {
             background: #111b2e;
             border: 1px solid #263248;
             border-radius: 12px;
-            padding: 27px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             transition: 0.3s;
         }
 
@@ -213,42 +236,51 @@
 
         .project-label {
             color: #38bdf8;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .project-card h3 {
             color: #ffffff;
-            font-size: 22px;
+            font-size: 21px;
             margin: 12px 0;
         }
 
         .project-card p {
             color: #cbd5e1;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
+            font-size: 14px;
         }
 
         .project-card ul {
             padding-left: 20px;
-            margin-bottom: 18px;
             color: #cbd5e1;
+            margin-bottom: 22px;
+            font-size: 14px;
         }
 
-        .project-link {
+        .project-card li {
+            margin-bottom: 5px;
+        }
+
+        .project-button {
             display: inline-block;
+            margin-top: auto;
             background: #38bdf8;
             color: #07111f;
-            padding: 9px 15px;
-            border-radius: 6px;
+            padding: 11px 18px;
+            border-radius: 7px;
+            font-size: 14px;
             font-weight: bold;
         }
 
-        .project-link:hover {
+        .project-button:hover {
             background: #7dd3fc;
         }
 
-        /* Tools */
+        /* TOOLS */
 
         .tools-list {
             display: flex;
@@ -257,21 +289,41 @@
         }
 
         .tool {
-            border: 1px solid #334155;
+            display: inline-block;
             background: #111b2e;
-            padding: 9px 15px;
+            border: 1px solid #334155;
             border-radius: 7px;
+            padding: 9px 15px;
             color: #cbd5e1;
+            font-size: 14px;
         }
 
-        /* Contact */
+        /* EDUCATION */
 
-        .contact-box {
-            text-align: center;
+        .education-card {
             background: #111b2e;
             border: 1px solid #263248;
             border-radius: 12px;
-            padding: 35px 20px;
+            padding: 25px;
+        }
+
+        .education-card h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #cbd5e1;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #111b2e;
+            border: 1px solid #263248;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         .contact-box p {
@@ -283,26 +335,39 @@
             color: #38bdf8;
         }
 
-        /* Footer */
+        /* FOOTER */
 
         footer {
             border-top: 1px solid #263248;
-            text-align: center;
             padding: 25px 0;
+            text-align: center;
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* Mobile Design */
+        /* MOBILE RESPONSIVE DESIGN */
 
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
+
+            .nav-content {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
 
             .hero {
-                padding: 65px 0;
+                padding: 70px 0;
             }
 
             .hero h1 {
                 font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 15px;
             }
 
             .section-title {
@@ -314,14 +379,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .nav-content {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 0 7px;
-            }
-
         }
 
     </style>
@@ -330,17 +387,20 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
 
     <nav>
         <div class="container nav-content">
 
-            <a href="#" class="logo">Saptarshi Bhowmick</a>
+            <a href="#home" class="logo">
+                Saptarshi Bhowmick
+            </a>
 
-            <div>
+            <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#tools">Tools</a>
                 <a href="#contact">Contact</a>
             </div>
 
@@ -348,13 +408,15 @@
     </nav>
 
 
-    <!-- Hero Section -->
+    <!-- HOME SECTION -->
 
-    <header class="hero">
+    <header class="hero" id="home">
 
         <div class="container">
 
-            <span class="tag">Digital Marketing Portfolio</span>
+            <span class="badge">
+                DIGITAL MARKETING PORTFOLIO
+            </span>
 
             <h1>
                 Hi, I'm <span>Saptarshi Bhowmick</span>
@@ -363,8 +425,8 @@
             <p>
                 Digital Marketing Professional focused on SEO,
                 Google Ads, Meta Ads, content marketing and analytics.
-                I enjoy researching keywords, planning campaigns
-                and developing digital marketing strategies.
+                I enjoy researching keywords, optimizing content
+                and planning digital marketing strategies.
             </p>
 
             <a href="#projects" class="button primary">
@@ -377,18 +439,24 @@
 
             <br>
 
-            <a href="https://www.linkedin.com/in/saptarshi-bhowmick-6737593b3/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button secondary">
-                LinkedIn
+            <a
+                href="https://www.linkedin.com/in/saptarshi-bhowmick-6737593b3/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button secondary">
+
+                LinkedIn Profile
+
             </a>
 
-            <a href="https://github.com/saptarshi-rishi"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button secondary">
-                GitHub
+            <a
+                href="https://github.com/saptarshi-rishi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button secondary">
+
+                GitHub Profile
+
             </a>
 
         </div>
@@ -396,16 +464,18 @@
     </header>
 
 
-    <!-- About Section -->
+    <!-- ABOUT SECTION -->
 
     <section id="about">
 
         <div class="container">
 
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">
+                About Me
+            </h2>
 
             <p class="section-description">
-                A little introduction about my digital marketing journey.
+                Get to know me and my digital marketing journey.
             </p>
 
             <div class="about-box">
@@ -417,21 +487,17 @@
                     Google Search Console.
                 </p>
 
-                <br>
-
                 <p>
-                    My project work includes keyword research and clustering,
-                    competitor research, SEO-optimized blog creation,
-                    digital advertising strategy, social media planning
-                    and marketing performance measurement.
+                    My project work includes keyword research and
+                    clustering, competitor research, SEO-optimized
+                    blog creation, digital advertising strategy,
+                    social media planning and marketing KPI analysis.
                 </p>
 
-                <br>
-
                 <p>
-                    I aim to help businesses improve online visibility,
-                    reach relevant audiences and make data-informed
-                    marketing decisions.
+                    My goal is to help businesses improve online
+                    visibility, reach relevant audiences and make
+                    data-informed marketing decisions.
                 </p>
 
             </div>
@@ -441,17 +507,19 @@
     </section>
 
 
-    <!-- Skills Section -->
+    <!-- SKILLS SECTION -->
 
     <section id="skills">
 
         <div class="container">
 
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title">
+                My Skills
+            </h2>
 
             <p class="section-description">
-                Digital marketing skills developed through learning
-                and practical projects.
+                Digital marketing skills demonstrated through
+                practical projects.
             </p>
 
             <div class="skills-grid">
@@ -462,20 +530,31 @@
 
                     <p>
                         Keyword Research, Keyword Clustering,
-                        On-Page SEO, Technical SEO,
-                        SEO Audit and Content Optimization.
+                        On-Page SEO, Technical SEO, SEO Audits,
+                        Search Intent and Content Optimization.
                     </p>
 
                 </div>
 
                 <div class="skill-card">
 
-                    <h3>Paid Advertising</h3>
+                    <h3>Google Ads</h3>
 
                     <p>
-                        Google Ads, Search Campaigns,
-                        Display Campaigns, Video Campaigns,
-                        Meta Ads and Audience Targeting.
+                        Search Campaign Planning, Display Ads,
+                        Video Campaign Planning, Keyword Targeting,
+                        Ad Groups and Bidding Strategies.
+                    </p>
+
+                </div>
+
+                <div class="skill-card">
+
+                    <h3>Meta Ads</h3>
+
+                    <p>
+                        Audience Targeting, Brand Awareness,
+                        Campaign Planning and Social Media Advertising.
                     </p>
 
                 </div>
@@ -485,9 +564,8 @@
                     <h3>Analytics</h3>
 
                     <p>
-                        Google Analytics 4, Google Search Console,
-                        CTR, Conversion Rate, ROAS,
-                        CAC and AOV.
+                        GA4, Google Search Console, CTR,
+                        Conversion Rate, ROAS, CAC and AOV.
                     </p>
 
                 </div>
@@ -497,32 +575,20 @@
                     <h3>Content Marketing</h3>
 
                     <p>
-                        Blog Research, Search Intent,
-                        SEO Content Planning, Blog Optimization
-                        and Internal Linking.
+                        Topic Research, Competitor Analysis,
+                        Blog Optimization, SEO Headings,
+                        Internal Linking and Content Strategy.
                     </p>
 
                 </div>
 
                 <div class="skill-card">
 
-                    <h3>Social Media</h3>
+                    <h3>Social & Email Marketing</h3>
 
                     <p>
-                        Social Media Optimization,
-                        Content Calendars, Brand Awareness
-                        and Audience Engagement.
-                    </p>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <h3>Email & WhatsApp</h3>
-
-                    <p>
-                        Campaign Planning, Promotional Messaging,
-                        Customer Communication and Engagement.
+                        SMO, Social Media Calendars, Email Campaign
+                        Planning and WhatsApp Marketing.
                     </p>
 
                 </div>
@@ -534,35 +600,40 @@
     </section>
 
 
-    <!-- Projects Section -->
+    <!-- PROJECTS SECTION -->
 
     <section id="projects">
 
         <div class="container">
 
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">
+                My Projects
+            </h2>
 
             <p class="section-description">
-                Practical digital marketing projects completed
-                as part of my learning journey.
+                Explore my practical digital marketing projects.
+                Click a button to open the original project.
             </p>
 
             <div class="projects-grid">
 
 
-                <!-- Project 1 -->
+                <!-- PROJECT 1: SLEEPY OWL -->
 
-                <div class="project-card">
+                <article class="project-card">
 
                     <span class="project-label">
                         SEO Project 01
                     </span>
 
-                    <h3>Sleepy Owl: Keyword Research</h3>
+                    <h3>
+                        Sleepy Owl: Keyword Research & Clustering
+                    </h3>
 
                     <p>
-                        Keyword research and clustering for a
-                        Sleepy Owl coffee-related blog topic.
+                        A keyword research project focused on
+                        identifying relevant keywords and organizing
+                        them into useful clusters for blog planning.
                     </p>
 
                     <ul>
@@ -572,61 +643,74 @@
                         <li>Google Keyword Planner</li>
                     </ul>
 
-                    <a href="https://drive.google.com/drive/folders/19ktBLJJLYRK7f-sMDOGoJkuS6JDFd_5a"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        View Project
+                    <a
+                        href="https://drive.google.com/drive/folders/19ktBLJJLYRK7f-sMDOGoJkuS6JDFd_5a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-button">
+
+                        View Sleepy Owl Project &#8599;
+
                     </a>
 
-                </div>
+                </article>
 
 
-                <!-- Project 2 -->
+                <!-- PROJECT 2: SEO BLOG -->
 
-                <div class="project-card">
+                <article class="project-card">
 
                     <span class="project-label">
                         SEO Project 02
                     </span>
 
-                    <h3>SEO-Optimized Blog Creation</h3>
+                    <h3>
+                        Topic Research & SEO-Optimized Blog
+                    </h3>
 
                     <p>
-                        Topic research and SEO-friendly blog creation
-                        using keyword research and on-page SEO practices.
+                        A practical SEO assignment involving topic
+                        research, competitor analysis, search intent
+                        and on-page blog optimization.
                     </p>
 
                     <ul>
-                        <li>Competitor Research</li>
+                        <li>Competitor Content Research</li>
                         <li>Search Intent Analysis</li>
                         <li>SEO Headings and Meta Description</li>
                         <li>WordPress and AIOSEO</li>
                     </ul>
 
-                    <a href="https://drive.usercontent.google.com/download?id=1YaU0VRLmhMWsFWJdjzU_DSHgZJ3twAR3&authuser=0"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        View Project
+                    <a
+                        href="https://drive.usercontent.google.com/download?id=1YaU0VRLmhMWsFWJdjzU_DSHgZJ3twAR3&authuser=0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-button">
+
+                        View SEO Blog Project &#8599;
+
                     </a>
 
-                </div>
+                </article>
 
 
-                <!-- Project 3 -->
+                <!-- PROJECT 3: KHETIKA -->
 
-                <div class="project-card featured">
+                <article class="project-card featured">
 
                     <span class="project-label">
                         Featured Project
                     </span>
 
-                    <h3>Khetika: Digital Marketing Strategy</h3>
+                    <h3>
+                        Khetika: Digital Marketing Strategy & Growth
+                    </h3>
 
                     <p>
                         An integrated digital marketing strategy
-                        for a premium farm-to-home D2C brand.
+                        for a premium farm-to-home D2C brand,
+                        covering organic visibility, paid advertising,
+                        content and customer acquisition.
                     </p>
 
                     <ul>
@@ -636,14 +720,17 @@
                         <li>Marketing KPIs and Analytics</li>
                     </ul>
 
-                    <a href="https://docs.google.com/presentation/d/1TQbP1Ujhliuvp2rwVUGzAhEtckzeNuUk/edit?usp=drive_link&ouid=111505227914656437445&rtpof=true"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        View Case Study
+                    <a
+                        href="https://docs.google.com/presentation/d/1TQbP1Ujhliuvp2rwVUGzAhEtckzeNuUk/edit?usp=drive_link&ouid=111505227914656437445&rtpof=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-button">
+
+                        View Khetika Case Study &#8599;
+
                     </a>
 
-                </div>
+                </article>
 
 
             </div>
@@ -653,16 +740,18 @@
     </section>
 
 
-    <!-- Tools Section -->
+    <!-- TOOLS SECTION -->
 
     <section id="tools">
 
         <div class="container">
 
-            <h2 class="section-title">Tools I Use</h2>
+            <h2 class="section-title">
+                Tools I Use
+            </h2>
 
             <p class="section-description">
-                Tools used for research, optimization and marketing analysis.
+                Digital marketing and research tools used in my projects.
             </p>
 
             <div class="tools-list">
@@ -694,17 +783,21 @@
     </section>
 
 
-    <!-- Education Section -->
+    <!-- EDUCATION SECTION -->
 
     <section id="education">
 
         <div class="container">
 
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">
+                Education
+            </h2>
 
-            <div class="about-box">
+            <div class="education-card">
 
-                <h3>B.Com (Major)</h3>
+                <h3>
+                    B.Com (Major)
+                </h3>
 
                 <p>
                     Thakurpukur Vivekananda College
@@ -721,7 +814,7 @@
     </section>
 
 
-    <!-- Contact Section -->
+    <!-- CONTACT SECTION -->
 
     <section id="contact">
 
@@ -740,27 +833,34 @@
 
                 <p>
                     Email:
-                    <a href="mailto:saptarshib89@gmail.com"
-                       class="email">
+                    <a
+                        href="mailto:saptarshib89@gmail.com"
+                        class="email">
+
                         saptarshib89@gmail.com
+
                     </a>
                 </p>
 
-                <a href="https://www.linkedin.com/in/saptarshi-bhowmick-6737593b3/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="button primary">
+                <a
+                    href="https://www.linkedin.com/in/saptarshi-bhowmick-6737593b3/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button primary">
+
                     Connect on LinkedIn
+
                 </a>
 
-                <a href="https://github.com/saptarshi-rishi"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="button secondary">
+                <a
+                    href="https://github.com/saptarshi-rishi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button secondary">
+
                     Visit GitHub
-                </a>
 
-                <!-- Resume button will be added after uploading resume.pdf -->
+                </a>
 
             </div>
 
@@ -769,15 +869,15 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
 
     <footer>
 
         <div class="container">
 
             <p>
-                © 2026 Saptarshi Bhowmick.
-                Digital Marketing Portfolio.
+                &copy; 2026 Saptarshi Bhowmick |
+                Digital Marketing Portfolio
             </p>
 
         </div>
